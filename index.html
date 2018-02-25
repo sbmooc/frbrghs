@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Four Boroughs</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <div class="menuLogo" onclick=menuClick(this) id='menuLogo'>
+      <div class="menuLine"></div>
+      <div class="menuLine"></div>
+      <div class="menuLine"></div>
+      <div class="menuExit" onclick=menuClick('menu')>TEST</div>
+    </div>
+
+<script>
+const menu = document.getElementById('menuLogo')
+const menuClick = (elem) => {
+if(elem.classList.contains('fullMenu')){
+  console.log('hello')
+  elem.classList.remove('fullMenu');
+}
+else
+elem.classList.add('fullMenu')
+
+}
+
+
+</script>
+  </body>
+</html>

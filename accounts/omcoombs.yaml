@@ -1,0 +1,11 @@
+email: omcoombs@gmail.com
+fullname: Oliver
+title: webMaster
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$K1.URwlrir4a.EdeCXKDr.vEUGRK8pDevWRXb.Nwj4QAWV0WCmzQG
