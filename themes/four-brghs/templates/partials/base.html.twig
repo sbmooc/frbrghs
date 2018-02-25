@@ -12,13 +12,9 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-
-    {% block stylesheets %}
-        {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
-    {% endblock %}
-    {{ assets.css() }}
+    <link rel="stylesheet" href="{{url('theme://css/normalize')}}">
+    <link rel="stylesheet" href="{{url('theme://css/pure-min.css')}}">
+    <link rel="stylesheet" href="{{url('theme://css/stylesheet.css')}}">
 
     {% block javascripts %}
         {% do assets.addJs('jquery', 100) %}
@@ -30,36 +26,46 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
+    <div class="header pure-menu pure-menu-horizontal home-menu pure-menu-fixed">
         <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
+            <a>
             </a>
             {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
+            {% include 'partials/navigation.html.twig' %}
             {% endblock %}
         </div>
     </div>
 {% endblock %}
 
+
+
+{% block headerimage %}
+<div class="headerimage" style="background-image:url({{page.header.mainimage}})"><div><h1>Four<br> Boroughs</h1><p>7-7 everyday</p><p>10 church road</p><p>crystal palace</p></div></div>
+{% endblock %}
+
 {% block body %}
-    <section id="body">
-        <div class="wrapper padding">
+
+    <section id="content-body">
+      {#{% block title %}
+      <div class="home-subtitle">7-7 everyday<br> 10 church road, crystal palace <br>se19 2rt</div>
+      {% endblock %}#}
+        <div class="wrapper">
         {% block content %}{% endblock %}
-        </div>
-    </section>
+      </div>
+      <div id="contact" class="padding">
+        {% include 'partials/contact.html.twig' %}
+      </div>
 {% endblock %}
 
 {% block footer %}
     <div class="footer text-center">
         <div class="wrapper padding">
-            <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="http://www.rockettheme.com">RocketTheme</a>.</p>
+          <p>10 church road</p><p>crystal palace</p><p>test@fourboroughs.co.uk</p><p>0123456789</p>
         </div>
     </div>
 {% endblock %}
+
+</section>
 
 {% block bottom %}
     {{ assets.js('bottom') }}

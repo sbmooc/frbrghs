@@ -1,0 +1,162 @@
+/*Variables to be used throughout the site*/
+
+:root {
+  --main: #313841;
+  --highlight: #EAEAE8;
+}
+
+/*Typography*/
+
+@font-face {
+  font-family:"Moderat Bold";
+  src:url("../fonts/Moderat Bold.otf");
+}
+
+@font-face {
+  font-family:"Moderat Regular";
+  src:url("../fonts/Moderat Regular.otf");
+}
+
+html {
+  font-family:"Moderat Regular";
+  color: var(--main)
+}
+
+body{
+  max-width: 1500px
+}
+
+h1 {
+letter-spacing: 0.25em;
+}
+
+#content-body{
+  position:absolute;
+  top: 60vh;
+  width: 100%
+}
+
+.padding{
+  padding: 0 6%
+}
+
+.home-menu ul{
+  float:right
+}
+
+@media(max-width:800px){
+  #contactBox > * {
+    width: 100%
+  }
+  textarea, input{
+    width: 100%
+  }
+  #map{
+    margin-top: 2em
+  }
+}
+
+@media(min-width:800px){
+  #contactBox > * {
+    width: 50%
+  }
+  textarea{
+    width: 90%
+  }
+
+  input{
+    width: 75%
+  }
+}
+
+.footer{
+  text-align: right;
+  color: var(--highlight);
+  background: var(--main);
+  padding-top: 1em;
+  padding-bottom: 1em
+}
+
+#contact-form{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+
+#contactBox{
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 400px
+}
+
+#map{
+  min-height: 400px;
+  margin-bottom: 1em
+}
+
+#bodyContent p{
+  margin: 0
+}
+
+.pure-menu-horizontal{
+  white-space:normal;
+}
+
+#content-body{
+  background:var(--highlight)
+}
+
+
+
+#contact-form button{
+  background-color: #ff69b4 !important
+}
+
+.about-us-text{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+
+.about-us-box{
+  max-width: 300px;
+  margin-top: 2em;
+  color: var(--highlight);
+  background: var(--main);
+  padding: 1em;
+}
+
+.home-menu{
+  background: white
+}
+
+.home-subtitle{
+  text-align: center;
+  background: var(--main);
+  color: var(--highlight);
+  padding: 1em
+}
+
+.home-title{
+  text-align: center;
+}
+
+.headerimage{
+  height: 60vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-position: right bottom;
+  margin-top: 36px
+}
+
+.headerimage div {
+  position: absolute;
+  top: 15vh;
+  margin-left: 6%;
+  border: 3px solid var(--main);
+  padding: 0 1em;
+  background: rgba(255,255,255,0.4)
+}
