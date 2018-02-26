@@ -1,6 +1,7 @@
 ---
-title: Home
+title: Events
 mainimage: user/images/tomincafe.jpg
+contact: true
 
 form:
     name: contact-form
@@ -45,4 +46,5 @@ form:
             body: "{% include 'forms/data.txt.twig' %}"
         - message: Thank you for your feedback!
         - display: thankyou
+
 ---

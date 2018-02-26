@@ -30,6 +30,10 @@ h1 {
 letter-spacing: 0.25em;
 }
 
+.alternate-about-us-text{
+  max-width: 600px
+}
+
 #content-body{
   position:absolute;
   top: 60vh;
@@ -80,7 +84,7 @@ letter-spacing: 0.25em;
 #contact-form{
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+justify-content: flex-start;
 }
 
 #contactBox{
@@ -109,7 +113,8 @@ justify-content: space-around;
 
 
 #contact-form button{
-  background-color: #ff69b4 !important
+  background-color: #ff69b4 !important;
+  margin-top: 1.5em
 }
 
 .about-us-text{
@@ -123,7 +128,7 @@ justify-content: space-around;
   margin-top: 2em;
   color: var(--highlight);
   background: var(--main);
-  padding: 1em;
+  padding: 1.8em;
 }
 
 .home-menu{
