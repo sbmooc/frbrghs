@@ -105,6 +105,13 @@ p {
 
 }
 
+hr {
+  margin: 1em 0;
+  color: var(--main)
+
+
+}
+
 
 
 @media(min-width:800px){

@@ -13,8 +13,8 @@ events:
       eventLink: https://www.eventbrite.co.uk/e/food-vs-beer-with-the-seasonal-kitchen-and-four-boroughs-tickets-42421080594
       eventSoldOut: false
 
-avaliableForHireTitle:
-avaliableForHireText:
+avaliableForHireTitle: Hire out our space
+avaliableForHireText: "This is some filler text as to why you should hire our space, how it's really good for lots of different events and how we will keep you fed and watered with good things. If you're interested you should get in touch"
 
 form:
     name: contact-form
