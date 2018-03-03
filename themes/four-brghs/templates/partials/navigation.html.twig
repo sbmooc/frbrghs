@@ -21,7 +21,7 @@
         {% endif %}
     {% endfor %}
                 <li class="pure-menu-item">
-                <a href="#contact" class="pure-menu-link" onclick=mobileMenuClose()>Contact</a>
+                <a class="pure-menu-link" onclick=mobileMenuClose();smoothscroll()>Contact</a>
                 </li>
 {% endmacro %}
 
@@ -64,6 +64,14 @@ const mobileMenuOpen =() => {
 const mobileMenuClose = () =>{
   menu.classList.remove('open');
   menu.classList.add('pure-menu-horizontal')
+}
+
+const smoothscroll = () =>{
+
+document.getElementById('contact').scrollIntoView({
+  behavior: 'smooth'
+});
+
 }
 
 
