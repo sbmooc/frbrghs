@@ -2,8 +2,14 @@
 
 :root {
   --main: #313841;
-  --highlight: #EAEAE8;
+  --lighter: #4d5866;
+  --darker: #252b33;
+  --light: #EAEAE8;
+  --highlight: #ff69b4
+
 }
+
+
 
 /*Typography*/
 
@@ -29,9 +35,47 @@ body{
 h1 {
 letter-spacing: 0.25em;
 }
+h3{
+  color: var(--lighter)
+}
 
-.alternate-about-us-text{
+p {
+  line-height: 1.5em
+}
+
+.about-us-text a, #contact a {
+  color: var(--darker);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-us-text a:hover, #contact a:hover{  color: var(--highlight);
+  /*background: var(--highlight)*/
+}
+
+.about-us-text, .event-text{
   max-width: 600px
+}
+
+.sold-out{
+  text-decoration: line-through;
+}
+
+.soldoutDiv{
+  display: flex;
+  flex-direction: row;
+}
+
+.soldoutDiv p {
+  margin-top: 1.5em;
+  margin-left: 2em;
+}
+
+.eventDetails p {
+  font-weight: 200;
+  line-height: 1em;
+  margin: 0;
+  color: var(--lighter)
 }
 
 #content-body{
@@ -44,9 +88,7 @@ letter-spacing: 0.25em;
   padding: 0 6%
 }
 
-.home-menu ul{
-  float:right
-}
+
 
 @media(max-width:800px){
   #contactBox > * {
@@ -58,7 +100,12 @@ letter-spacing: 0.25em;
   #map{
     margin-top: 2em
   }
+
+
+
 }
+
+
 
 @media(min-width:800px){
   #contactBox > * {
@@ -71,20 +118,29 @@ letter-spacing: 0.25em;
   input{
     width: 75%
   }
+
 }
 
-.footer{
+
+
+#contact{
+  margin-top: 2em
+}
+
+.footer {
   text-align: right;
-  color: var(--highlight);
+  color: var(--light);
   background: var(--main);
   padding-top: 1em;
-  padding-bottom: 1em
+  padding-bottom: 1em;
+  margin-top: 2em
 }
 
 #contact-form{
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+margin-top: -1.5em
 }
 
 #contactBox{
@@ -102,34 +158,35 @@ justify-content: flex-start;
   margin: 0
 }
 
-.pure-menu-horizontal{
-  white-space:normal;
-}
+
 
 #content-body{
-  background:var(--highlight)
+  background:var(--light)
 }
 
+.form-label{
+  display: none
+}
 
-
-#contact-form button{
-  background-color: #ff69b4 !important;
+.form-field{
   margin-top: 1.5em
 }
 
-.about-us-text{
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: space-between;
+.pure-form input:focus:invalid, .pure-form select:focus:invalid, .pure-form textarea:focus:invalid{
+
+border-color: var(--highlight);
 }
 
-.about-us-box{
-  max-width: 300px;
-  margin-top: 2em;
-  color: var(--highlight);
-  background: var(--main);
-  padding: 1.8em;
+
+
+#content-body{
+  border-top: 1px solid var(--main)
 }
+
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
+    background-color: var(--highlight);
+    color: #fff;
+  margin-top: 1.5em}
 
 .home-menu{
   background: white
@@ -138,7 +195,7 @@ justify-content: flex-start;
 .home-subtitle{
   text-align: center;
   background: var(--main);
-  color: var(--highlight);
+  color: var(--light);
   padding: 1em
 }
 
@@ -159,7 +216,7 @@ justify-content: flex-start;
 
 .headerimage div {
   position: absolute;
-  top: 15vh;
+  margin-top: 5%;
   margin-left: 6%;
   border: 3px solid var(--main);
   padding: 0 1em;

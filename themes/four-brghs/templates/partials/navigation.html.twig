@@ -12,7 +12,7 @@
                 </ul>
             </li>
         {% else %}
-            <li class="{{ current_page }} pure-menu-item">
+            <li class="{{ current_page }} pure-menu-item  menu-page-list">
                 <a href="{{ p.url }}" class="pure-menu-link">
                     {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
                     {{ p.menu }}
@@ -20,19 +20,51 @@
             </li>
         {% endif %}
     {% endfor %}
+                <li class="pure-menu-item">
+                <a href="#contact" class="pure-menu-link">Contact</a>
+                </li>
 {% endmacro %}
 
 <ul class="pure-menu-list">
+
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
             {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}>
+            <li class="{{ current_page }}">
                 <a href="{{ page.url }}">
                     {{ page.menu }}
                 </a>
             </li>
         {% endfor %}
+
     {% endif %}
+
+<svg class="pure-menu-item hamburger" onclick="mobileMenuOpen()" height="2em" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="2em" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width:"1.5em" height="1.5em"viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve" class="close" onclick="mobileMenuClose()">
+<metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+<g><path d="M500,990C229.8,990,10,770.2,10,500S229.8,10,500,10s490,219.8,490,490S770.2,990,500,990z M500,80.3C268.6,80.3,80.3,268.6,80.3,500c0,231.4,188.3,419.7,419.7,419.7c231.4,0,419.7-188.3,419.7-419.7C919.7,268.6,731.4,80.3,500,80.3z"/><path d="M549.3,501.5l151.3-149.7c13.8-13.6,13.9-35.7,0.3-49.5c-13.6-13.8-35.8-13.9-49.5-0.3L499.9,451.9L350.6,302.2c-13.7-13.7-35.8-13.8-49.5-0.1c-13.7,13.6-13.7,35.8-0.1,49.5l149,149.5L299.8,649.8c-13.8,13.6-13.9,35.7-0.3,49.5c6.9,6.9,15.9,10.4,24.9,10.4c8.9,0,17.8-3.4,24.6-10.1l150.5-148.8l151.7,152.2c6.8,6.9,15.8,10.3,24.8,10.3c9,0,17.9-3.4,24.7-10.2c13.7-13.7,13.7-35.8,0.1-49.5L549.3,501.5z"/></g>
+</svg>
+
 </ul>
+
+<script>
+
+const menu = document.getElementById('navigationMenu')
+const body = document.getElementsByTagName('body')
+
+const mobileMenuOpen =() => {
+  menu.classList.add('open');
+  menu.classList.remove('pure-menu-horizontal')
+  body.classList.add('openMenu')
+}
+
+const mobileMenuClose = () =>{
+  menu.classList.remove('open');
+  menu.classList.add('pure-menu-horizontal')
+}
+
+
+</script>

@@ -1,11 +1,22 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<div class="alternate-about-us-text padding">
-<h1> Good things </h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="event-text padding">
+{% for event in page.header.events %}
+<h1> {{event.eventTitle|markdown}} </h1>
+<div class="eventDetails">
+<p> {{event.eventDate}} </p>
+<p> {{event.eventTime}} </p>
+<p> {{event.eventPrice}} </p>
 </div>
+<p>{{event.eventText|markdown}}</p>
+<img class="pure-img" src="{{event.eventPhoto}}">
+{% if event.eventSoldOut %}
+<p>Sorry, all the tickets have gone!<p>
 
+{% else %}
+<a href="{{event.eventLink}}"><button class="pure-button pure-button-primary">Order Tickets Here</button></a>
+{% endif %}
+{%endfor%}
+</div>
 {% endblock %}
