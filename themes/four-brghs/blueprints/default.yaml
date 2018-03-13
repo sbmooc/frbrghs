@@ -1,0 +1,4 @@
+title: Default
+'@extends':
+    type: home
+    context: blueprints://pages

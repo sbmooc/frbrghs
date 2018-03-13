@@ -1,0 +1,47 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        Content:
+          type: tab
+          title: Content
+
+          fields:
+            header.title:
+                type: text
+                label: Page Title
+
+            header.mainimage:
+              type: filepicker
+              folder: 'user/images'
+              preview_images: true
+              label: Select a header image
+
+            header.contact:
+              type: toggle
+              label: Contact field?
+              options:
+                1: "True"
+                0: "False"
+              validate:
+                type: bool
+
+            header.bodyTitle:
+                type: text
+                label: Content Title
+
+            header.bodyText:
+                type: markdown
+                label: Content
+
+            custom_file:
+                type: file
+                label: File Upload
+                destination: 'user/images'
+                filesize: 1
+                multiple: true
+                accept:
+                  - image/*

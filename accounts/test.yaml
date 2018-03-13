@@ -1,0 +1,9 @@
+email: test@test.com
+access:
+  admin:
+    login: true
+    pages: true
+fullname: 'Four Boroughs Test'
+title: Mr
+state: enabled
+hashed_password: $2y$10$MHX64dNDr5kL04uHp.gOeeybOi8CnvP2Ur4KGMeoXd6FEGujeLTtq

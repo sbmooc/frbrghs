@@ -1,0 +1,30 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        Content:
+          type: tab
+          title: Content
+
+          fields:
+            header.times:
+                type: text
+                label: Times
+            header.address1:
+                type: text
+                label: Address 1
+            header.address2:
+                type: text
+                label: Address 2
+            header.postcode:
+                type: text
+                label: Postcode
+            header.email:
+                type: text
+                label: Postcode
+            header.telephone:
+                type: text
+                label: Phone

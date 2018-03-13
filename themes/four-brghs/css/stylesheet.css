@@ -11,6 +11,8 @@
 
 
 
+
+
 /*Typography*/
 
 @font-face {
@@ -54,7 +56,16 @@ p {
 }
 
 .about-us-text, .event-text{
-  max-width: 600px
+  max-width: 600px;
+  text-align: justify;
+
+}
+
+.about-us-text img, .event-text img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+
 }
 
 .sold-out{
@@ -131,7 +142,9 @@ hr {
 
 
 #contact{
-  margin-top: 2em
+  margin-top: 2em;
+  border-top: var(--main) 2px solid;
+  padding-top: 2em
 }
 
 .footer {
@@ -228,4 +241,12 @@ border-color: var(--highlight);
   border: 3px solid var(--main);
   padding: 0 1em;
   background: rgba(255,255,255,0.4)
+}
+
+.headerimage div * {
+  text-align: center
+}
+
+.headerimage h1 {
+  line-height: 2em
 }

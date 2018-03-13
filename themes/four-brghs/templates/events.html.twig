@@ -1,16 +1,18 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+{% if page.header.showliveEvents %}
 <div class="event-text padding">
-{% for event in page.header.events %}
-<h1> {{event.eventTitle|markdown}} </h1>
+{% for event in page.header.liveEvents %}
+<h1> {{event.eventTitle}} </h1>
+<h3> {{event.eventSubtitle}} </h3>
 <div class="eventDetails">
 <p> {{event.eventDate}} </p>
 <p> {{event.eventTime}} </p>
 <p> {{event.eventPrice}} </p>
 </div>
 <p>{{event.eventText|markdown}}</p>
-<img class="pure-img" src="{{event.eventPhoto}}">
+<img class="pure-img" src="user/images/{{event.eventPhoto}}">
 {% if event.eventSoldOut %}
 <p>Sorry, all the tickets have gone!<p>
 
@@ -18,10 +20,23 @@
 <a href="{{event.eventLink}}"><button class="pure-button pure-button-primary">Order Tickets Here</button></a>
 {% endif %}
 {%endfor%}
+
 </div>
 <hr>
-<div class="padding hireout event-text">
-<h1> {{page.header.avaliableForHireTitle}}</h1>
-<p>{{page.header.avaliableForHireText|markdown}}</p>
+{% endif %}
+{% if page.header.showPreviousEvents %}
+<div class="event-text padding">
+<h3> Previously at Four Boroughs...</h3>
+{% for event in page.header.previousEvents %}
+<h1> {{event.eventTitle}} </h1>
+<h3> {{event.eventSubtitle}} </h3>
+<div class="eventDetails">
+<p> {{event.eventDate}} </p>
+<p> {{event.eventTime}} </p>
+</div>
+<p> {{event.eventText|markdown}} </p>
+<img class="pure-img" src="user/images/{{event.eventPhoto}}">
+{% endfor %}
+{% endif %}
 </div>
 {% endblock %}

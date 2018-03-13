@@ -1,0 +1,113 @@
+title: Events
+'@extends':
+    type: home
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        Content:
+          type: tab
+          title: Content
+
+          fields:
+            header.bodyText:
+              type: ignore
+            header.bodyTitle:
+              type: ignore
+            custom_file:
+              type: ignore
+            header.showliveEvents:
+              type: toggle
+              label: Show Live Events?
+              options:
+                1: "True"
+                0: "False"
+              validate:
+                type: bool
+            header.showPreviousEvents:
+              type: toggle
+              label: Show Previous Events?
+              options:
+                1: "True"
+                0: "False"
+              validate:
+                type: bool
+
+            header.liveEvents:
+              type: list
+              name: Live Events
+              label: Live Events
+              style: vertical
+              fields:
+                .eventTitle:
+                  type: text
+                  label: Event Title
+                .eventSubtitle:
+                  type: text
+                  label: Event Subtitle
+                .eventDate:
+                  type: text
+                  label: Date
+                .eventTime:
+                  type: text
+                  label: Time
+                .eventText:
+                  type: markdown
+                  label: Event Text
+                .eventPhoto:
+                  type: filepicker
+                  label: Photo
+                  folder: 'user/images'
+                  preview_images: true
+                  label: Select an event photo
+                .eventLink:
+                  type: text
+                  label: Event Link
+                .eventSoldOut:
+                  type: toggle
+                  label: Event Sold Out?
+                  options:
+                    1: "True"
+                    0: "False"
+                  validate:
+                    type: bool
+            header.previousEvents:
+              type: list
+              name: Previous Events
+              label: Previous Events
+              style: vertical
+              fields:
+                .eventTitle:
+                  type: text
+                  label: Event Title
+                .eventSubtitle:
+                  type: text
+                  label: Event Subtitle
+                .eventDate:
+                  type: text
+                  label: Date
+                .eventTime:
+                  type: text
+                  label: Time
+                .eventText:
+                  type: markdown
+                  label: Event Text
+                .eventPhoto:
+                  type: filepicker
+                  label: Photo
+                  folder: 'user/images'
+                  preview_images: true
+                  label: Select an event photo
+            new_file:
+                type: file
+                label: File Upload
+                destination: 'user/images'
+                filesize: 1
+                multiple: true
+                accept:
+                  - image/*

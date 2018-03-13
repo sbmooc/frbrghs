@@ -41,15 +41,12 @@
 
 
 {% block headerimage %}
-<div class="headerimage" style="background-image:url({% if page.header.mainimage %}{% endif %} {{pages.find('/home').header.mainimage}})"><div><h1>Four<br> Boroughs</h1><p>7-7 everyday</p><p>10 church road</p><p>crystal palace</p></div></div>
+<div class="headerimage" style="background-image:url(user/images/{% if page.header.mainimage %}{% endif %}{{pages.find('/home').header.mainimage}})"><div><h1>FOUR<br>BOROUGHS</h1><p>{{pages.find('/details').header.times}}</p><p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p></div></div>
 {% endblock %}
 
 {% block body %}
 
     <section id="content-body">
-      {#{% block title %}
-      <div class="home-subtitle">7-7 everyday<br> 10 church road, crystal palace <br>se19 2rt</div>
-      {% endblock %}#}
         <div class="wrapper">
         {% block content %}{% endblock %}
       </div>
@@ -63,7 +60,7 @@
 {% block footer %}
     <div class="footer text-center">
         <div class="wrapper padding">
-          <p>10 church road</p><p>crystal palace</p><p>test@fourboroughs.co.uk</p><p>0123456789</p>
+          <p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p><p>{{pages.find('/details').header.email}}</p><p>{{pages.find('/details').header.telephone|markdown}}</p>
         </div>
     </div>
 {% endblock %}
