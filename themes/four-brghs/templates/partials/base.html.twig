@@ -52,7 +52,7 @@
       </div>
       {%if page.header.contact%}
       <div id="contact" class="padding">
-        {% include 'partials/contact.html.twig' %}
+        {% include 'partials/contact.html.twig' with { form: forms('contact-form') } %}
       </div>
       {% endif %}
 {% endblock %}

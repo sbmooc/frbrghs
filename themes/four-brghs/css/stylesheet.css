@@ -91,7 +91,6 @@ p {
 
 #content-body{
   position:absolute;
-  top: 60vh;
   width: 100%
 }
 
@@ -224,7 +223,6 @@ border-color: var(--highlight);
 }
 
 .headerimage{
-  height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: fixed;
@@ -232,6 +230,30 @@ border-color: var(--highlight);
   width: 100%;
   background-position: right bottom;
   margin-top: 36px
+}
+
+@media (max-height: 700px){
+
+.headerimage{
+  height: 450px !important
+}
+
+#content-body{
+  top: 450px !important
+}
+
+}
+
+@media (min-height: 700px){
+
+.headerimage{
+  height: 60vh
+}
+
+#content-body{
+  top: 60vh
+}
+
 }
 
 .headerimage div {
