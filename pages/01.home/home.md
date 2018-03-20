@@ -49,7 +49,7 @@ form:
         -
             message: 'Thank you for your feedback!'
         -
-            display: thankyou
+            display: /home/thankyou
 custom_file:
     user/images/180211_Four-Boroughs_45.jpg:
         name: 180211_Four-Boroughs_45.jpg
@@ -57,4 +57,3 @@ custom_file:
         size: 667579
         path: user/images/180211_Four-Boroughs_45.jpg
 ---
-
