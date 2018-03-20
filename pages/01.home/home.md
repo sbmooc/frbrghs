@@ -47,7 +47,7 @@ form:
                 extension: txt
                 body: '{% include ''forms/data.txt.twig'' %}'
         -
-            message: 'Thank you for your feedback!'
+            message: 'Thanks for your message - we'll be in touch'
         -
             display: /home/thankyou
 custom_file:
