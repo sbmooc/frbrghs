@@ -41,7 +41,7 @@
 
 
 {% block headerimage %}
-<div class="headerimage" style="background-image:url(user/images/{% if page.header.mainimage %}{% endif %}{{pages.find('/home').header.mainimage}})"><div><h1>FOUR<br>BOROUGHS</h1><p>{{pages.find('/details').header.times}}</p><p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p></div></div>
+<div class="headerimage" style="background-image:url(user/images/{% if page.header.mainimage %}{{page.header.mainimage}}{% else %}{{pages.find('/home').header.mainimage}}{% endif %})"><div><h1 class="{{page.header.headerimageclass}}">FOUR<br>BOROUGHS</h1><!--<img class="pure-img" src='user/images/Web/Marque/FourB_Marque_Colour1.jpg'>--></div></div>
 {% endblock %}
 
 {% block body %}
@@ -56,7 +56,7 @@
       </div>
       {% endif %}
 {% endblock %}
-
+{#<p>{{pages.find('/details').header.times}}</p><p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p>#}
 {% block footer %}
     <div class="footer text-center">
         <div class="wrapper padding">

@@ -35,6 +35,7 @@ body{
 }
 
 h1 {
+font-family: 'Moderat Bold';
 letter-spacing: 0.25em;
 }
 h3{
@@ -111,6 +112,11 @@ p {
     margin-top: 2em
   }
 
+  .headerimage h1{
+
+    font-size: 2.5em;
+}
+
 
 
 }
@@ -136,6 +142,10 @@ hr {
     width: 75%
   }
 
+  .headerimage h1{
+
+    font-size: 5em;
+}
 }
 
 
@@ -222,15 +232,7 @@ border-color: var(--highlight);
   text-align: center;
 }
 
-.headerimage{
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: fixed;
-  left: 0;
-  width: 100%;
-  background-position: right bottom;
-  margin-top: 36px
-}
+
 
 @media (max-height: 700px){
 
@@ -247,22 +249,32 @@ border-color: var(--highlight);
 @media (min-height: 700px){
 
 .headerimage{
-  height: 60vh
+  height: 75vh
 }
 
 #content-body{
-  top: 60vh
+  top: 75vh
 }
 
+}
+
+.headerimage{
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-position: right bottom;
+  margin-top: 36px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center
 }
 
 .headerimage div {
   position: absolute;
   margin-top: 5%;
   margin-left: 6%;
-  border: 3px solid var(--main);
-  padding: 0 1em;
-  background: rgba(255,255,255,0.4)
 }
 
 .headerimage div * {
@@ -270,5 +282,24 @@ border-color: var(--highlight);
 }
 
 .headerimage h1 {
-  line-height: 2em
+  line-height: 2em;
+}
+
+.darkheader{
+
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: var(--light);
+
+}
+
+.lightheader{
+
+color: var(--light);
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: var(--main);
+
+}
+
+.pinkheader{
+  color: var(--highlight)
 }
