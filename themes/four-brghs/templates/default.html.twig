@@ -1,5 +1,8 @@
 {% extends 'partials/base.html.twig' %}
-
 {% block content %}
-    {{ page.content }}
+<div class="padding">
+<h1> {{page.header.bodyTitle}} </h1>
+<h3> {{page.header.subTitle|markdown}} </h3>
+<p> {{page.header.bodyText|markdown}} </p>
+</div>
 {% endblock %}

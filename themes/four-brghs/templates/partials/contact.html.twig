@@ -28,7 +28,12 @@
 {% if (action == base_url_relative) %}
     {% set action = base_url_relative ~ '/' ~ page.slug %}
 {% endif %}
-
+<div>
+<p>{{pages.find('/details').header.times}}</p>
+<p>{{pages.find('/details').header.address1}}</p>
+<p>{{pages.find('/details').header.address2}}</p>
+<p>{{pages.find('/details').header.email}}</p>
+<p>{{pages.find('/details').header.telephone}}</p>
 <form name="{{ form.name }}"
       action="{{ action | trim('/', 'right') }}"
       method="{{ method }}"{{ multipart }}
@@ -90,7 +95,7 @@
   {% include 'forms/fields/uniqueid/uniqueid.html.twig' %}
   {{ nonce_field('form', 'form-nonce')|raw }}
 </form>
-
+</div>
 <div id="map">
 </div>
 </div>
@@ -113,13 +118,12 @@
           map: map,
           icon: image,});
 
-  var address = '<div id="content">'+
-    '<div id="bodyContent">'+'<p>{{pages.find('/details').header.times}}</p><p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p><p>{{pages.find('/details').header.email}}</p><p>{{pages.find('/details').header.telephone}}</p>'
-    '</div>'+
-    '</div>';
+/*  var address = '<div id="content">'+
 
-var infowindow = new google.maps.InfoWindow({
-  content: address})
+    '</div>'+
+    '</div>';*/
+
+/*var infowindow = new google.maps.InfoWindow()*/
 
 infowindow.open(map, marker)
 
@@ -133,9 +137,3 @@ marker.addListener('click', function() {
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRGQBl2v6QlWTrPBhbsFWqEKv0Wwj2KMI &callback=initMap"
 async defer></script>
 </section>
-
-
-
-{#<div class="pure-form pure-form-stacked padding">
-{% include "forms/form.html.twig" %}
-</div>#}

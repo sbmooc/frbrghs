@@ -29,8 +29,12 @@
 {% block header %}
     <div id="navigationMenu" class="header pure-menu pure-menu-horizontal home-menu pure-menu-fixed">
         <div class="wrapper padding">
-            <a>
+          <div class="navigationLogo">
+              <a href='/' class="pure-menu-link">
+              <img src="user/themes/four-brghs/images/logo.png">
+
             </a>
+          </div>
             {% block header_navigation %}
             {% include 'partials/navigation.html.twig' %}
             {% endblock %}
@@ -41,7 +45,7 @@
 
 
 {% block headerimage %}
-<div class="headerimage" style="background-image:url(user/images/{% if page.header.mainimage %}{{page.header.mainimage}}{% else %}{{pages.find('/home').header.mainimage}}{% endif %})"><div><h1 class="{{page.header.headerimageclass}}">FOUR<br>BOROUGHS</h1><!--<img class="pure-img" src='user/images/Web/Marque/FourB_Marque_Colour1.jpg'>--></div></div>
+<div class="headerimage" style="background-image:url(user/images/{% if page.header.mainimage %}{{page.header.mainimage}}{% else %}{{pages.find('/home').header.mainimage}}{% endif %})"><div><h1 class="{{page.header.headertitleclass}} {% if page.header.headerbackground %}headerBackground {% endif %}">{% if page.header.headerTitle %}{{page.header.headerTitle}}{% else %}FOUR<br>BOROUGHS{% endif %}</h1><!--<img class="pure-img" src='user/images/Web/Marque/FourB_Marque_Colour1.jpg'>--></div></div>
 {% endblock %}
 
 {% block body %}
@@ -60,6 +64,7 @@
 {% block footer %}
     <div class="footer text-center">
         <div class="wrapper padding">
+          <h2> {{pages.find('/details').header.footertext|markdown}} </h2>
           <p>{{pages.find('/details').header.address1}}</p><p>{{pages.find('/details').header.address2}}</p><p>{{pages.find('/details').header.email}}</p><p>{{pages.find('/details').header.telephone|markdown}}</p>
         </div>
     </div>

@@ -46,6 +46,14 @@ p {
   line-height: 1.5em
 }
 
+a {
+  cursor: pointer
+}
+
+html{
+  cursor:
+}
+
 .about-us-text a, #contact a {
   color: var(--darker);
   text-decoration: none;
@@ -165,6 +173,10 @@ hr {
   margin-top: 2em
 }
 
+.footer h2 {
+  text-align: center
+}
+
 #contact-form{
 display: flex;
 flex-direction: column;
@@ -176,6 +188,10 @@ margin-top: -1.5em
   display: flex;
   flex-wrap: wrap;
   min-height: 400px
+}
+
+#contactBox div p {
+  margin: 0.5em
 }
 
 #map{
@@ -285,19 +301,43 @@ border-color: var(--highlight);
   line-height: 2em;
 }
 
-.darkheader{
 
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: var(--light);
+
+.navigationLogo img {
+  height: 25px;
+  padding: 3px
 
 }
+
+.pure-menu-list{
+  margin-top: 7px
+}
+
+
+.navigationLogo {
+  display: inline-block;
+}
+
+.darkheader {
+
+/*-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: var(--light);*/
+
+}
+
 
 .lightheader{
 
 color: var(--light);
--webkit-text-stroke-width: 2px;
--webkit-text-stroke-color: var(--main);
+/*-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: var(--main);*/
 
+}
+
+.headerBackground{
+  background: rgba(255,255,255,0.3);
+  padding: 3%;
+  border-radius: 25px
 }
 
 .pinkheader{

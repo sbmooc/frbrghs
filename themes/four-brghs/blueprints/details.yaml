@@ -28,3 +28,6 @@ form:
             header.telephone:
                 type: text
                 label: Phone
+            header.footertext:
+                type: textarea
+                label: Footer Text

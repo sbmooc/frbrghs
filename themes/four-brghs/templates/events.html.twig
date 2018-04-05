@@ -27,7 +27,7 @@
 {% if page.header.showPreviousEvents %}
 <div class="event-text padding">
 <h3> Previously at Four Boroughs...</h3>
-{% for event in page.header.previousEvents %}
+{% for event in page.header.previousEvents |reverse %}
 <h1> {{event.eventTitle}} </h1>
 <h3> {{event.eventSubtitle}} </h3>
 <div class="eventDetails">

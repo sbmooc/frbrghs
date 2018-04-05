@@ -20,6 +20,29 @@ form:
               preview_images: true
               label: Select a header image
 
+            header.headerTitle:
+              type: text
+              label: Header Title
+              default: FOUR <br> BOROUGHS
+
+            header.headertitleclass:
+              type: select
+              label: Header Title Color
+              options:
+                darkheader: Dark Header
+                lightheader: Light Header
+                pinkheader: Pink Header
+
+            header.headerbackground:
+              type: toggle
+              label: Header Title Background
+              options:
+                1: "Yes"
+                0: "No"
+              validate:
+                type: bool
+
+
             header.contact:
               type: toggle
               label: Contact field?
