@@ -1,39 +1,50 @@
 ---
 title: Events
-mainimage: tomincafe.jpg
-headerTitle: Events
-headertitleclass: pinkheader
+mainimage: take2.jpg
+headerTitle: EVENTS
+headertitleclass: lightheader
 headerbackground: false
 contact: true
 showliveEvents: true
-showPreviousEvents: true
+showPreviousEvents: false
 liveEvents:
     -
-        eventTitle: 'GOOD VINS - APRIL ''18'
-        eventDate: '26 April'
-        eventTime: 1945-2230
+        eventTitle: 'WINE TASTING'
+        eventSubtitle: 'GOOD VINS #3'
+        eventDate: '26th April'
+        eventTime: '7.45pm - 10pm'
         eventText: "We will have a selection of five GOOD VINS to taste curated by the guys behind 161 Kirkdale and Under the Bonnet Wines...this means they will be wines that have had minimal technological and chemical intervention, rather they are made in the same way as everything else in Four Boroughs...by master crafts people relying on the investment of time, effort and experience.\r\n"
         eventPhoto: 'https _cdn.evbuc.com_images_42876471_232981840128_1_original.jpg'
         eventLink: 'https://www.eventbrite.com/e/good-vins-april-18-tickets-44668284040?aff=es2'
+        eventSoldOut: true
+    -
+        eventTitle: 'SUPPER CLUB'
+        eventSubtitle: 'FOOD vs. BEER'
+        eventDate: '7th + 8th June'
+        eventTime: 'From 7.45pm'
+        eventText: "Four Boroughs and The Seasonal Kitchen are back for the Summer round of FOOD vs. BEER. Due to popular demand we will be running two evenings back to back so join us on either the Thursday or Friday for an incredible evening of craft beer and vegan food matching. You will have four plant-based courses and four beers. Carefully matched after in depth testing (I know we have a difficult job!). \r\n\r\nBoth Four Boroughs and The Seasonal Kitchen will be on hand to talk you through the beer & food pairings."
+        eventPhoto: IMG_6533.JPG
         eventSoldOut: false
 previousEvents:
     -
-        eventTitle: 'GOOD VINS'
-        eventDate: '15th Feb'
+        eventTitle: 'GOOD VINS #2'
+        eventDate: '15th Februrary'
         eventTime: '7.45pm - 10pm'
         eventText: 'We will have a selection of five GOOD VINS to taste curated by the guys behind 161 Kirkdale and Under the Bonnet Wines...this means they will be wines that have had minimal technological and chemical intervention, rather they are made in the same way as everything else in Four Boroughs...by master crafts people relying on the investment of time, effort and experience.'
         eventPhoto: goodvins.jpg
     -
-        eventTitle: 'Food vs Beer'
-        eventSubtitle: 'The Seasonal Kitchen and Four Boroughs'
-        eventText: "Four Boroughs and Seasonal Kitchen are back for another round of 'food vs beer'. This will be an incredible evening of beer and food matching. You will have four plant-based courses and four beers. Carefully matched after in depth testing (I know we have a difficult job!). \r\n\r\nBoth teams from Four Borough’s and Seasonal Kitchen will be on hand to talk you through the beer & food pairings."
+        eventTitle: 'FOOD VS. BEER'
+        eventSubtitle: 'The Seasonal Kitchen + Four Boroughs'
+        eventDate: '9th March'
+        eventTime: 7.30pm
+        eventText: "Four Boroughs and The Seasonal Kitchen are back for the 'Spring' round of FOOD VS. BEER. This will be an incredible evening of craft beer and vegan food matching. You will have four plant-based courses and four beers. Carefully matched after in depth testing (I know we have a difficult job!). \r\n\r\nBoth Four Boroughs and The Seasonal Kitchen will be on hand to talk you through the beer & food pairings."
         eventPhoto: foodvsbeer.jpg
 showLiveEvents: true
 new_file:
-    'user/images/https _cdn.evbuc.com_images_42876471_232981840128_1_original.jpg':
-        name: 'https _cdn.evbuc.com_images_42876471_232981840128_1_original.jpg'
+    user/images/IMG_6533.JPG:
+        name: IMG_6533.JPG
         type: image/jpeg
-        size: 8219
-        path: 'user/images/https _cdn.evbuc.com_images_42876471_232981840128_1_original.jpg'
+        size: 573656
+        path: user/images/IMG_6533.JPG
 ---
 
