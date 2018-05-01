@@ -12,7 +12,9 @@
 <p> {{event.eventPrice}} </p>
 </div>
 <p>{{event.eventText|markdown}}</p>
+{% if event.eventPhoto %}
 <img class="pure-img" src="user/images/{{event.eventPhoto}}">
+{% endif %}
 {% if event.eventSoldOut %}
 <p>Sorry, all the tickets have gone!<p>
 
@@ -35,7 +37,9 @@
 <p> {{event.eventTime}} </p>
 </div>
 <p> {{event.eventText|markdown}} </p>
+{% if event.eventPhoto %}
 <img class="pure-img" src="user/images/{{event.eventPhoto}}">
+{% endif %}
 {% endfor %}
 {% endif %}
 </div>
