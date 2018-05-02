@@ -2,11 +2,17 @@
   .pure-menu-item.menu-page-list{
     display: none
   }
+
 }
 @media(min-width:800px){
       .pure-menu-item.hamburger{
         display: none
       }
+
+}
+
+.open .navigationLogo{
+  display: block
 }
 
 

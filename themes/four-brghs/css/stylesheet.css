@@ -308,14 +308,15 @@ border-color: var(--highlight);
 
 }
 
+.navigationLogo {
+  display: inline-block;
+}
+
+
 .pure-menu-list{
   margin-top: 7px
 }
 
-
-.navigationLogo {
-  display: inline-block;
-}
 
 .darkheader {
 
