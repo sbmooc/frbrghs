@@ -1,4 +1,5 @@
 {% if uri.extension() == 'json' %}{% include 'default.json.twig' %}{% else %}
+    {% set icon_style = config.plugins.admin.admin_icons %}
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -45,6 +46,7 @@
                     {% block titlebar %}{% endblock %}
                 </div>
 
+                {% block content_wrapper %}
                 <div class="content-wrapper">
                     <div class="{% if config.plugins.admin.content_padding %}content-padding{% endif %}">
                         {% block messages %}
@@ -69,7 +71,9 @@
                         {% endblock %}
                     </div>
                 </div>
+                {% endblock %}
 
+                {% block modals %}
                 <div class="remodal" data-remodal-id="generic" data-remodal-options="hashTracking: false">
                     <form>
                         <h1>{{ "PLUGIN_ADMIN.ERROR"|tu }}</h1>
@@ -104,12 +108,15 @@
                         </div>
                     </form>
                 </div>
+                {% endblock %}
 
             </main>
             <div id='overlay'></div>
         </div>
         {% endblock page %}
-    {% block bottom %}{% endblock %}
+    {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+    {% endblock %}
     </body>
     {% endblock body %}
     </html>

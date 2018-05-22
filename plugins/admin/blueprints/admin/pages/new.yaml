@@ -35,15 +35,21 @@ form:
         required: true
 
     name:
-      type: hidden
-      default: 'default'
+      type: select
+      classes: fancy
+      label: PLUGIN_ADMIN.PAGE_FILE
+      help: PLUGIN_ADMIN.PAGE_FILE_HELP
+      data-options@: '\Grav\Plugin\AdminPlugin::pagesTypes'
+      data-default@: '\Grav\Plugin\Admin\Admin::getLastPageName'
+      validate:
+        required: true
 
     visible:
       type: toggle
       label: PLUGIN_ADMIN.VISIBLE
       help: PLUGIN_ADMIN.VISIBLE_HELP
       highlight: ''
-      default: '1'
+      default: ''
       options:
         '': Auto
         1: PLUGIN_ADMIN.YES

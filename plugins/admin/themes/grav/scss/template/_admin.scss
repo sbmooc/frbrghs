@@ -282,7 +282,7 @@ $content-padding: 1.5rem;
     }
 
     h3 {
-        margin: 0;
+        margin: 0 15px 0 0;
         @extend %vertical-align;
         text-align: center;
         font-size: 1.5rem;
@@ -386,11 +386,14 @@ $content-padding: 1.5rem;
 #admin-nav-quick-tray {
     margin: 0;
     list-style: none;
-    padding: 3px 10px 5px 25px;
+    padding-left: 26px;
+    padding-right: 10px;
+
 
     li {
         cursor: pointer;
         width: 24px;
+        margin: 3px 0 5px;
     }
 
     i {
@@ -1163,7 +1166,6 @@ body.sidebar-quickopen #admin-main {
 }
 
 // Reinstall packages
-
 .updates-checked {
     .button-reinstall-package {
         display: inline-block!important;
@@ -1173,5 +1175,16 @@ body.sidebar-quickopen #admin-main {
         .button-reinstall-package {
             display: none!important;
         }
+    }
+}
+
+// Preview
+.preview-wrapper {
+    .content-padding {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 }

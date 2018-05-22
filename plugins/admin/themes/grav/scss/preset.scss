@@ -138,12 +138,13 @@ a {
 
 // Typography
 blockquote {
-    border-left: 10px solid darken($content-bg,5%);
+    border-left: 10px solid darken($content-bg, 10%);
+    background: darken($content-bg, 2%);
     p {
-        color: #999;
+        color: darken($page-text, 5%);
     }
     cite {
-        color: #666;
+        color: $page-text;
     }
 }
 
@@ -367,7 +368,7 @@ tr {
 
 #admin-nav-quick-tray {
     background: darken($nav-bg, 2%);
-    border-bottom: 1px solid lighten($nav-bg, 2%);
+    border-bottom: 1px solid darken($nav-bg, 3%);
     color: $nav-link;
 
     i:hover {
@@ -628,8 +629,11 @@ tr {
 // Forms
 form {
     h1, h3 {
-        color: $content-header;
         border-bottom: 3px solid $underline;
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: $content-header;
     }
 
     .note {
@@ -829,6 +833,32 @@ form {
     }
 }
 
+// Display RESET
+form {
+    .form-display-wrapper {
+
+        table {
+            border: 1px solid $form-border;
+
+            th {
+                background-color: lighten($form-border, 6%);
+                border-bottom: 3px solid  $form-border;
+                border-right: 1px solid $form-border;
+            }
+
+            td {
+                border-right: 1px solid  $form-border;
+            }
+
+            tr {
+                border-bottom: 1px solid  $form-border;
+            }
+        }
+    }
+
+}
+
+
 .grav-editor-resizer {
     background-color: rgba(213,213,213,1);
     @include linear-gradient(top, rgba(213,213,213,1) 0%, rgba(213,213,213,1) 20%, rgba(237,237,237,1) 20%, rgba(237,237,237,1) 40%, rgba(213,213,213,1) 40%, rgba(213,213,213,1) 60%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 80%, rgba(213,213,213,1) 80%, rgba(213,213,213,1) 100%);
@@ -1022,10 +1052,6 @@ form {
     background: $update-bg;
     color: $update-text;
 
-    &.alert {
-        border-bottom: 2px solid darken($update-bg, 5%);
-    }
-
     a {
         color: darken($update-text, 10%);
         &:hover {
@@ -1046,10 +1072,6 @@ form {
     background: $notice-bg;
     color: $notice-text;
 
-    &.alert {
-        border-bottom: 2px solid darken($notice-bg, 5%);
-    }
-
     a {
         color: darken($notice-text, 10%);
         &:hover {
@@ -1069,10 +1091,6 @@ form {
 .error, .warning {
     background: $critical-bg;
     color: $critical-text;
-
-    &.alert {
-        border-bottom: 2px solid darken($critical-bg, 5%);
-    }
 
     a {
         color: darken($critical-text, 10%);
@@ -1328,7 +1346,7 @@ form {
             }
         }
 
-        .dz-remove, .dz-view, .dz-insert, .dz-metadata {
+        .dz-remove, .dz-unset, .dz-view, .dz-insert, .dz-metadata {
 
             background: darken($content-bg,5%);
 
@@ -1566,6 +1584,20 @@ body .bootstrap-datetimepicker-widget {
             background-color: rgba($black, 0.3);
         }
     }
+}
+
+.preview-wrapper {
+    iframe {
+        @if (lightness($page-bg) < 50) {
+            border: 1px solid lighten($page-bg, 3%)
+        } @else {
+            border: 1px solid darken($page-bg, 3%)
+        }
+    }
+}
+
+.permission-container {
+    overflow: hidden;
 }
 
 // Range-field
