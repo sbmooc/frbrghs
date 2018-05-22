@@ -101,39 +101,38 @@
 </div>
 
 <script>
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 51.419550, lng: -0.078890},
-      zoom: 16,
-      styles: [{
-        featureType: 'poi.business',
-        stylers: [{visibility: 'off'}]
-      }],
-      mapTypeControl: false
-    });
-      var image = 'user/images/googleMapsLogo.png';
+mapboxgl.accessToken = "pk.eyJ1Ijoic2Jtb29jIiwiYSI6ImNqZ3FoZm9meDJ2djEyd3M3ODMzZnBoajIifQ.oBxXKbFVFVMEt4otPEG1CA";
 
-  var marker = new google.maps.Marker({
-          position: {lat: 51.419490, lng: -0.078972},
-          map: map,
-          icon: image,});
-
-/*  var address = '<div id="content">'+
-
-    '</div>'+
-    '</div>';*/
-
-/*var infowindow = new google.maps.InfoWindow()*/
-
-infowindow.open(map, marker)
-
-marker.addListener('click', function() {
-  infowindow.open(map, marker);
+/* Map: This represents the map on the page. */
+var map = new mapboxgl.Map({
+container: "map",
+style: "mapbox://styles/mapbox/streets-v10",
+zoom:15.0,
+center: [-0.08126,51.41961]
 });
 
-  }
-
+map.on("load", function () {
+/* Image: An image is loaded and added to the map. */
+map.loadImage("user/images/googleMapsLogo.png", function(error, image) {
+    if (error) throw error;
+    map.addImage("custom-marker", image);
+    /* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
+    map.addLayer({
+      id: "markers",
+      type: "symbol",
+      /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+      source: {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features:[{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.07901084446856999,51.41970366875225]}}]}
+      },
+      layout: {
+        "icon-image": "custom-marker",
+      }
+    });
+  });
+});
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRGQBl2v6QlWTrPBhbsFWqEKv0Wwj2KMI &callback=initMap"
-async defer></script>
+
 </section>
