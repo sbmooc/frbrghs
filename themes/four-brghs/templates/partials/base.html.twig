@@ -64,7 +64,7 @@
 {% block body %}
 
     <section id="content-body">
-        <div class="wrapper">
+        <div class="wrapper {% if page.header.title == "Thanks!" %} padding {% endif %}">
         {% block content %}{% endblock %}
       </div>
       {%if page.header.contact%}
